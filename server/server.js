@@ -9,7 +9,7 @@ var middleware = {
 
     userAuth : function (req, res,  next) {
 
-        console.log('User has been authenticated ' + today);
+        console.log('User has been authenticated hey !' + today);
         next();
     },
     detectUser: function (req, res, next) {
