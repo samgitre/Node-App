@@ -1,8 +1,5 @@
 
-
-
 var today = new Date().toString();
-
 
 module.exports = {
 
