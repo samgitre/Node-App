@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var setPort = process.env.PORT || 5000;
+var setPort = process.env.PORT || 4000;
 var middleware = require('../middleware');
 
 
@@ -18,4 +18,4 @@ app.get('/about', middleware.detectUser, function (req, res) {
 
 app.use(express.static(__dirname + '/public'));
 app.listen(setPort);
-console.log('server running');
+console.log('server running at : ' + setPort);
