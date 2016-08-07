@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 var setPort = process.env.PORT || 4000;
 var middleware = require('../middleware');
 
@@ -7,7 +8,7 @@ var middleware = require('../middleware');
 
 
 app.get('/', middleware.userAuth, function (req, res) {
-    res.send('index home');
+    res.render('index.html');
 });
 
 
@@ -16,6 +17,7 @@ app.get('/about', middleware.detectUser, function (req, res) {
 });
 
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.resolve(__dirname + '/public')));
+app.set('view engine', 'html');
 app.listen(setPort);
 console.log('server running at : ' + setPort);
